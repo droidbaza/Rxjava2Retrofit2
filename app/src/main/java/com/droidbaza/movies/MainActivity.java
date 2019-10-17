@@ -4,6 +4,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import com.droidbaza.movies.adapter.MoviesAdapter;
+import com.droidbaza.movies.adapter.ZoomLinearLayoutManager;
 import com.droidbaza.movies.api.ApiService;
 import com.droidbaza.movies.api.MovieApi;
 import com.droidbaza.movies.model.Movie;
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         moviesAdapter = new MoviesAdapter(MainActivity.this, movies);
+        ZoomLinearLayoutManager lm = new ZoomLinearLayoutManager(this);
+        recyclerView.setLayoutManager(lm);
         recyclerView.setAdapter(moviesAdapter);
 
         getMovies();
