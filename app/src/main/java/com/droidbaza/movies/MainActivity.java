@@ -22,7 +22,7 @@ import io.reactivex.schedulers.Schedulers;
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.recyclerview)
-    private RecyclerView recyclerView;
+    RecyclerView recyclerView;
 
 
     private List<Movie> movies = new ArrayList<>();
